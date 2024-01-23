@@ -1,11 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <div>Hello Saifur</div>
-</body>
-</html>
+<%- include("layout/header") %>
+  <main>
+    <form action="/" method="post">
+      <input type="text" name="planguage" id="ProgramLang" required>
+      <button type="submit">Add</button>
+    </form>
+
+    <ul>
+      <% if(ling.length>0){ %>
+      <% for(let i=0; i<ling.length;i++){ %>
+          <li><%= ling[i] %></li>
+        <% } %>
+      <% }else{ %>
+        <p>Add to see language!!</p>
+      <%}%>
+    </ul>
+  </main>
+<%- include("layout/footer") %>
